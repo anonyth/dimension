@@ -15,8 +15,12 @@
             </div>
             <div class="content">
               <div class="inner">
-                <h1>{{ .Site.Title | safeHTML }}</h1>
-                <p>{{ .Site.Params.description | safeHTML }}</p>
+                {{with .Site.Params.title}}
+                <h1>{{ . | safeHTML }}</h1>
+                {{end}}
+                {{with .Site.Params.description}}
+                <p>{{ . | safeHTML }}</p>
+                {{end}}
               </div>
             </div>
             <nav>
